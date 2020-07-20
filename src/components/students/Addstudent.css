@@ -1,0 +1,30 @@
+.container .form{
+    width: 40vw;
+    height: 50vh;
+    margin:  auto;
+    top: 10px;
+}
+.container .form .inputs{
+    display: block;
+    margin: 20px auto;
+    padding: 10px;
+    width:300px ;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px #000;
+    overflow: hidden;
+}
+.container .form .add{
+    width: 150px;
+    background: #6c6c6c;
+    margin: auto;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px #000;
+}
+.container .form .add button{
+    padding: 10px;
+    font-size: 20px;
+}
+.container .form .add button:hover{
+    color: #ffffff;
+    transition: .7s ease;
+}

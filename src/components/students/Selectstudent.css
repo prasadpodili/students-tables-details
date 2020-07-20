@@ -1,0 +1,27 @@
+.container .link{
+    text-decoration: none;
+    background: burlywood;
+    font-size: 25px;
+    width: 300px;
+    margin-top: 100px;
+}
+.container .link .back:hover{
+    color: #fff;
+    transition: .3s ease;
+}
+.container .back{
+    text-decoration: none;
+    color: #000;
+}
+.container .details{
+    margin: auto;
+
+}
+.details ul{
+    list-style: none;
+}
+.details ul li{
+    color: #fff;
+    font-size: 30px;
+    margin: 20px;
+}
