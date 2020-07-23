@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import Home from './components/Home/Home';
+import '../node_modules/bootstrap/dist/css/bootstrap.css';
 import {BrowserRouter as Router,Route,Switch,withRouter} from 'react-router-dom';
 import Notfound from './components/Notfound/Notfound';
 import Addstudent from './components/students/Addstudent';

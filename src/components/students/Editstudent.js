@@ -1,7 +1,7 @@
 import React, {useState,useEffect} from 'react';
 import axios from 'axios';
 import {useHistory,useParams} from 'react-router-dom';
-import './Addstudent.css';
+
 
 const EditStudent = (props) => {
     let history=useHistory();
@@ -22,69 +22,80 @@ const EditStudent = (props) => {
     },[]);
     const onSubmit=async (e)=>{
         e.preventDefault();
-        await axios.put(`http://localhost:3004/users/${id}`,student);
+        await axios.put(`/users/${id}`,student);
         history.push("/");
     };
 
     const loadStudent=async ()=>{
-        const result=await axios.get(`http://localhost:3004/users/${id}`);
+        const result=await axios.get(`/users/${id}`);
         setStudent(result.data);
     };
 
   return(
     <div className="container">
-         <h1>Edit A Student</h1>
-        <form onSubmit={e=>onSubmit(e)}>
-            <div className="form">
+    <div className="w-75 mx-auto shadow p-5">
+         <h1 className="text-center mb-4 text-light">Edit A Student</h1>
+        <form class="was-validated" onSubmit={e=>onSubmit(e)}>
+            <div className="form-group">
                 <input 
                     type="text"
-                    className="inputs"
+                    className="form-control form-control-lg"
                     placeholder="enter firstname"
                     name="firstname"
                     value={firstname}
                     onChange={e=>onInputChange(e)}
-
+                    required
                 />
+                </div>
+                <div className="form-group">    
                 <input 
                     type="text"
-                    className="inputs"
+                    className="form-control form-control-lg"
                     placeholder="enter lastname"
                     name="lastname"
                     value={lastname}
                     onChange={e=>onInputChange(e)}
-
+                    required
                 />
+                </div>
+                <div className="form-group">
                 <input 
                     type="text"
-                    className="inputs"
+                    className="form-control form-control-lg"
                     placeholder="enter address"
                     name="address"
                     value={address}
                     onChange={e=>onInputChange(e)}
-
+                    required
                 />
+                </div>
+                <div className="form-group">
                 <input 
                     type="text"
-                    className="inputs"
+                    className="form-control form-control-lg"
                     placeholder="enter phone no.."
                     name="phoneno"
                     value={phoneno}
                     onChange={e=>onInputChange(e)}
+                    required
                 />
+                </div>
+                <div className="form-group">
                 <input 
                     type="text"
-                    className="inputs"
+                    className="form-control form-control-lg"
                     placeholder="enter gpa"
                     name="gpa"
                     value={gpa}
                     onChange={e=>onInputChange(e)}
-
+                    required
                 />
-                <div className="add"><button className="add">Update</button></div>
-            </div>
+                </div>
+            <button className="btn btn-warning btn-block w-50 mx-auto">Update</button>
             
             
         </form>
+        </div>
     </div>
    );
 

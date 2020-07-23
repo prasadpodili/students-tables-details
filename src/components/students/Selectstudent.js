@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {Link, useParams} from 'react-router-dom';
 import axios from 'axios';
-import './Selectstudent.css';
+
 
 const Student = (props) => {
   const [student, setStudent] = useState({
@@ -16,24 +16,24 @@ const Student = (props) => {
     loadStudent();
   }, []);
   const loadStudent = async () => {
-    const res = await axios.get(`http://localhost:3004/users/${id}`);
+    const res = await axios.get(`/users/${id}`);
     setStudent(res.data);
   };
   return (
-    <div className="container">
-      <h1>Student id:{id}</h1>
+    <div className="container py-4">
+      <h1 className="display-4 text-light">Student id:{id}</h1>
       <hr />
       <div className="details">
-        <ul>
-          <li>Name:{' ' + student.firstname}</li>
-          <li>Username:{' ' + student.lastname}</li>
-          <li>Email:{' ' + student.address}</li>
-          <li>Phone:{' ' + student.phoneno}</li>
-          <li>Website:{' ' + student.gpa}</li>
+        <ul className="list-group w-50">
+          <li className="list-group-item">Name:{' ' + student.firstname}</li>
+          <li className="list-group-item">Username:{' ' + student.lastname}</li>
+          <li className="list-group-item">Email:{' ' + student.address}</li>
+          <li className="list-group-item">Phone:{' ' + student.phoneno}</li>
+          <li className="list-group-item">Website:{' ' + student.gpa}</li>
         </ul>
       </div>
-      <div className="link">
-        <Link className="back" to="/">back to home</Link>
+      <div className="py-4">
+        <Link className="btn btn-primary " to="/">back to home</Link>
       </div>
     </div>
   );
